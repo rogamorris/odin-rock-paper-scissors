@@ -1,5 +1,13 @@
-const computerSelection = getComputerChoice();
-const playerSelection = prompt("Do you want to play rock, paper, or scissors?");
+game();
+
+function game() {
+    const computerSelection = getComputerChoice();
+    const playerSelection = prompt("Do you want to play rock, paper, or scissors?");
+    playRound(playerSelection, computerSelection);
+    console.log("Computer plays: " + computerSelection);
+    console.log("You play: " + playerSelection);
+    console.log(playRound(playerSelection, computerSelection))
+};
 
 function getComputerChoice() {
     randomNumber = Math.random() * 100
@@ -31,7 +39,3 @@ function playRound(playerSelection, computerSelection) {
         return "It's a tie!"
     }
 };
-
-console.log("Computer plays: " + computerSelection);
-console.log("You play: " + playerSelection);
-console.log(playRound(playerSelection, computerSelection))
